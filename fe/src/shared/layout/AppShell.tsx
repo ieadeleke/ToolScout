@@ -23,8 +23,8 @@ export function AppShell() {
 
   return (
     <div className="min-h-screen bg-[#13131a] text-white">
-      {/* Gradient top accent */}
-      <div className="h-[2px] bg-gradient-to-r from-[#F6C913] via-[#0EC6B2] to-[#F47FBE]" />
+      {/* Top accent */}
+      <div className="h-[2px] bg-[#0EC6B2]" />
 
       <header className="sticky top-0 z-20 border-b border-white/[0.08] bg-[#13131a]/95 backdrop-blur-xl">
         <div className="mx-auto max-w-7xl px-5 h-14 flex items-center gap-4">

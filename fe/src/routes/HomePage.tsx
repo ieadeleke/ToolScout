@@ -56,7 +56,7 @@ function HeroSearch() {
     <form onSubmit={submit} className="w-full max-w-xl mx-auto">
       <div className="relative">
         {/* Ambient glow */}
-        <div className="absolute -inset-px rounded-2xl bg-gradient-to-r from-[#F6C913]/40 via-[#0EC6B2]/40 to-[#F47FBE]/40 blur-lg opacity-60 pointer-events-none" />
+        <div className="absolute -inset-px rounded-2xl bg-white/10 opacity-60 pointer-events-none" />
         <div className="relative flex items-center rounded-2xl border border-white/[0.12] bg-[#1c1c26] overflow-hidden shadow-[0_0_0_1px_rgba(255,255,255,0.04)]">
           <Search className="ml-4 h-4.5 w-4.5 text-white/70 shrink-0 ml-5" />
           <input
@@ -100,7 +100,7 @@ export function HomePage() {
           20+ curated AI tools and counting
         </div>
 
-        <h1 className="text-5xl md:text-[64px] font-bold tracking-tight text-gradient leading-[1.07]">
+        <h1 className="text-5xl md:text-[64px] font-bold tracking-tight text-white leading-[1.07]">
           Discover the<br />best AI tools
         </h1>
 
@@ -204,7 +204,7 @@ export function HomePage() {
 
         {/* Right — dark showcase */}
         <div className="md:col-span-3 rounded-[22px] bg-[#1c1c26] border border-white/[0.07] overflow-hidden flex flex-col">
-          <div className="relative flex-1 min-h-[180px] flex flex-col items-center justify-center gap-3 p-5 bg-gradient-to-b from-white/[0.04] to-transparent overflow-hidden">
+          <div className="relative flex-1 min-h-[180px] flex flex-col items-center justify-center gap-3 p-5 bg-white/[0.04] overflow-hidden">
             {trending[1]?.logo_url ? (
               <img
                 src={trending[1].logo_url}

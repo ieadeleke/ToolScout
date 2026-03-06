@@ -70,7 +70,7 @@ export function ToolPage() {
       {/* Hero card */}
       <div className="rounded-2xl border border-white/[0.08] bg-[#1c1c26] overflow-hidden">
         {/* Top accent stripe */}
-        <div className="h-[3px] bg-gradient-to-r from-[#F6C913] via-[#0EC6B2] to-[#F47FBE]" />
+        <div className="h-[3px] bg-[#0EC6B2]" />
 
         <div className="p-6 md:p-8">
           <div className="flex flex-col sm:flex-row sm:items-start gap-5">
