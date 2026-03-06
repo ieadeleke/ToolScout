@@ -1,0 +1,12 @@
+[build]
+# Build the frontend from the fe folder and publish the Vite dist
+base = "fe"
+command = "npm run build"
+publish = "dist"
+
+# Single Page App: route all paths to index.html so reloads work
+[[redirects]]
+from = "/*"
+to = "/index.html"
+status = 200
+
