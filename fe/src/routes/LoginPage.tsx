@@ -29,7 +29,7 @@ export function LoginPage() {
       <div className="p-8 md:p-12 flex items-center justify-center">
         <div className="w-full max-w-sm">
           <Link to="/" className="inline-flex items-center gap-2 mb-8 text-sm text-white/50 hover:text-white transition-colors">
-            ← ToolScout
+            ← Scout
           </Link>
           <h1 className="mb-1 text-2xl font-semibold text-white">Sign in</h1>
           <p className="mb-7 text-sm text-white/40">Welcome back. Enter your credentials to continue.</p>

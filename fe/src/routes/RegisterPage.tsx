@@ -39,10 +39,10 @@ export function RegisterPage() {
       <div className="p-8 md:p-12 flex items-center justify-center">
         <div className="w-full max-w-sm">
           <Link to="/" className="inline-flex items-center gap-2 mb-8 text-sm text-white/50 hover:text-white transition-colors">
-            ← ToolScout
+            ← Scout
           </Link>
           <h1 className="mb-1 text-2xl font-semibold text-white">Create account</h1>
-          <p className="mb-7 text-sm text-white/40">Join ToolScout to save tools and get personalized shelves.</p>
+          <p className="mb-7 text-sm text-white/40">Join Scout to save tools and get personalized shelves.</p>
           <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
             <div className="grid grid-cols-2 gap-3">
               <div className="space-y-1.5">

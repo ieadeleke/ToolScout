@@ -155,7 +155,7 @@ export function HomePage() {
               Introducing<br />
               {isLoading
                 ? <span className="inline-block h-9 w-36 rounded-xl bg-black/10 mt-1 align-middle" />
-                : (trending[0]?.name || 'ToolScout')}
+                : (trending[0]?.name || 'Scout')}
             </h2>
           </div>
           <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
@@ -165,7 +165,7 @@ export function HomePage() {
           </div>
           <div className="relative z-10 flex items-center gap-2 text-[13px] text-black/55">
             <div className="h-1.5 w-1.5 rounded-full bg-black/40 shrink-0" />
-            <span className="font-semibold text-black">{trending[0]?.name || 'ToolScout'}</span>
+            <span className="font-semibold text-black">{trending[0]?.name || 'Scout'}</span>
             <span className="text-black/35">—</span>
             <span className="capitalize">{trending[0]?.tasks?.[0] || trending[0]?.roles?.[0] || 'AI Discovery'}</span>
           </div>
