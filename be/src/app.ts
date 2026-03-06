@@ -16,7 +16,8 @@ app.use(express.json({ limit: '1mb' }))
 app.use(cookieParser())
 const origins = (env.CLIENT_ORIGIN || '').split(',').map(s => s.trim()).filter(Boolean)
 const corsOptions: CorsOptions = {
-  origin: origins.length > 1 ? origins : origins[0] || true,
+  // origin: origins.length > 1 ? origins : origins[0] || true,
+  origin: '*',
   credentials: true,
 }
 app.use(cors(corsOptions))
@@ -26,6 +27,21 @@ app.use(
   rateLimit({ windowMs: 60 * 1000, limit: 300, standardHeaders: true, legacyHeaders: false })
 )
 
-app.get('/health', (_req, res) => res.json({ ok: true }))
+app.get('/health', async (_req, res) => {
+  const mongoose = await import('mongoose')
+  const dbState = mongoose.connection.readyState
+  // 0=disconnected 1=connected 2=connecting 3=disconnecting
+  const dbStatus = ['disconnected', 'connected', 'connecting', 'disconnecting'][dbState] ?? 'unknown'
+  const ok = dbState === 1
+  res.status(ok ? 200 : 503).json({
+    ok,
+    status: ok ? 'healthy' : 'degraded',
+    db: dbStatus,
+    uptime: Math.floor(process.uptime()),
+    timestamp: new Date().toISOString(),
+    version: process.env.npm_package_version ?? '0.1.0',
+    env: process.env.NODE_ENV ?? 'development',
+  })
+})
 app.use('/api/v1', v1Router)
 app.use(errorHandler)
