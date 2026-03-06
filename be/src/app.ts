@@ -17,7 +17,7 @@ app.use(cookieParser())
 const origins = (env.CLIENT_ORIGIN || '').split(',').map(s => s.trim()).filter(Boolean)
 const corsOptions: CorsOptions = {
   // origin: origins.length > 1 ? origins : origins[0] || true,
-  origin: '*',
+  origin: 'https://toolscout.netlify.app',
   credentials: true,
 }
 app.use(cors(corsOptions))
