@@ -1,0 +1,34 @@
+version: '3.9'
+services:
+  mongo:
+    image: mongo:7
+    container_name: toolscout-mongo
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo-data:/data/db
+  api:
+    build: ./be
+    container_name: toolscout-api
+    environment:
+      - NODE_ENV=production
+      - PORT=4000
+      - CLIENT_ORIGIN=http://localhost:5173
+      - MONGO_URI=mongodb://mongo:27017/toolscout
+      - JWT_SECRET=change-me
+      - ACCESS_TOKEN_TTL_SEC=900
+      - REFRESH_TOKEN_TTL_SEC=604800
+      - SECURE_COOKIES=false
+      - COOKIE_SAMESITE=lax
+    ports:
+      - "4000:4000"
+    depends_on:
+      - mongo
+  web:
+    build: ./fe
+    container_name: toolscout-web
+    ports:
+      - "5173:80"
+volumes:
+  mongo-data:
+
